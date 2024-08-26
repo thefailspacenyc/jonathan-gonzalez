@@ -16,8 +16,28 @@ code {
 
 :root {
   --app-padding: 30px 60px;
+  --app-height: 100%;
   /* === LIGHT MODE === */
   --primary-line: #01092B;
+
+}
+
+@font-face {
+  font-family: "Neusa Next Std";   /*Can be any text*/
+  src: local("Neusa Next Std"),
+    url("./fonts/NeusaNextStdTrial-Regular-BF63ec3d6dd0eb5.otf") format("truetype");
+}
+
+p {
+  font-family: "Neusa Next Std", sans-serif;
+  font-size: 20px;
+}
+
+h2 {
+  font-family: "magno-sans-variable", sans-serif;
+  font-size: 44px;
+  font-variation-settings: "wght" 400;
+  margin: 0;
 }
 
 h3 {
@@ -40,6 +60,7 @@ h5 {
   box-sizing: border-box;
   display: grid;
   padding: var(--app-padding);
+  position: fixed;
   width: 100vW;
 }
 
@@ -52,7 +73,7 @@ h5 {
 .horizontal-line {
   background-color: var(--primary-line);
   height: 2px;
-  width: 75%;
+  width: 60%;
 }
 
 .subnav-wrapper {
@@ -69,11 +90,60 @@ h5 {
 }
 
 .subnav-wrapper > a {
+  color: inherit;
+  opacity: 50%;
+  transition-duration: 300ms;
+  text-decoration: none;
+}
+
+.subnav-wrapper > a:hover {
+  opacity: 100%;
+  transition-duration: 300ms;
+}
+
+/* ====== PAGE LAYOUT ====== */
+
+.page-wrapper {
+  display: flex;
+  column-gap: 30px;
+  padding-left: 140px;
+  min-height: var(--app-height);
+}
+
+.main-container > p {
+  margin-bottom: 0px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  width: 60%;
+}
+
+.side-container {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  width: 30%;
+}
+
+/* ====== ABOUT ====== */
+
+.about-page {
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+.side-container > a {
+  color: inherit;
+  text-decoration: none;
   opacity: 50%;
   transition-duration: 300ms;
 }
 
-.subnav-wrapper > a:hover {
+.side-container > a:hover {
   opacity: 100%;
   transition-duration: 300ms;
 }

@@ -3,6 +3,7 @@ import './App.css';
 
 // COMPONENTS
 import Navigation from './components/Nav';
+import appHeight from './appHeight';
 
 function App() {
   return (
