@@ -31,7 +31,7 @@ import About from '../pages/About';
             <Router>
                 <div className="nav-wrapper"> 
                     <div className="main-nav-wrapper">
-                        <h3 onClick={() => menuToggle()}>MENU</h3>
+                        <h3 className="cursor" onClick={() => menuToggle()}>MENU</h3>
                         <div className="horizontal-line"></div>
                         <svg width="30%" height="auto" viewBox="0 0 488 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.02813 44C3.78342 44 2.75955 43.541 1.95651 42.6231C1.15347 41.6653 0.751953 40.488 0.751953 39.0912V19.9946H14.5441V33.2245C14.5441 33.9828 14.7248 34.5215 15.0862 34.8408C15.4476 35.1601 15.9695 35.3197 16.6521 35.3197C17.2945 35.3197 17.7964 35.18 18.1578 34.9007C18.5192 34.5814 18.6999 34.0426 18.6999 33.2844V1.13741H32.733V39.0912C32.733 40.488 32.3314 41.6653 31.5284 42.6231C30.7254 43.541 29.7015 44 28.4568 44H5.02813Z" fill="#01092B"/>

@@ -19,13 +19,17 @@ code {
   --app-height: 100%;
   /* === LIGHT MODE === */
   --primary-line: #01092B;
-
+  --highlight: #0000FE;
 }
 
 @font-face {
   font-family: "Neusa Next Std";   /*Can be any text*/
   src: local("Neusa Next Std"),
     url("./fonts/NeusaNextStdTrial-Regular-BF63ec3d6dd0eb5.otf") format("truetype");
+}
+
+a:hover {
+ color: var(--highlight);
 }
 
 p {
@@ -72,7 +76,7 @@ h5 {
 
 .horizontal-line {
   background-color: var(--primary-line);
-  height: 2px;
+  height: 1px;
   width: 60%;
 }
 
@@ -96,8 +100,130 @@ h5 {
   text-decoration: none;
 }
 
-.subnav-wrapper > a:hover {
+.subnav-wrapper > a:hover {  
+  color: var(--highlight);
   opacity: 100%;
+  transition-duration: 300ms;
+}
+
+.cursor {
+  transition-duration: 300ms;
+}
+
+.cursor:hover {
+  color: var(--highlight);
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+/* ====== FOOTER ====== */
+
+.footer-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  padding: var(--app-padding);
+  width: 100vW;
+}
+
+.social-icon {
+  fill: var(--primary-line);
+  transition-duration: 300ms;
+  width: 40px;
+}
+
+.social-icon:hover {
+  fill: var(--highlight);
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+
+
+.footer-form {
+  display: flex;
+  border-right: 1px solid var(--primary-line);
+  justify-content: flex-end;
+  padding-right: 30px;
+  overflow: hidden;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.footer-form > div {
+  display: flex;
+  column-gap: 30px;
+  margin-top: 30px;
+}
+
+input {
+  font-family: "Neusa Next Std", sans-serif;
+  border-bottom: 1px solid var(--primary-line);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  transition-duration: 300ms;
+}
+
+input:focus {
+  font-family: "Neusa Next Std", sans-serif;
+  border-bottom: 1px solid #0000FE;
+  color: #0000FE;
+  outline: none;
+  transition-duration: 300ms;
+}
+
+input::placeholder {
+  color: var(--primary-line);
+}
+
+input::after {
+  color: #0000FE;
+}
+
+button {
+  background-color: white;
+  border: 1px solid var(--primary-line);
+  border-radius: 5px;
+  font-family: "Neusa Next Std", sans-serif;
+  padding: 5px 50px;
+  transition-duration: 300ms;
+}
+
+button:hover {
+  background-color: var(--highlight);
+  border: 1px solid var(--highlight);
+  color: white;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+.main-footer-wrapper {
+  align-items: center;
+  column-gap: 30px;
+  display: flex;
+  height: 5vH;
+}
+
+.main-footer-wrapper > a {
+  color: inherit;
+  text-decoration: none;
+  transition-duration: 300ms;
+}
+
+.main-footer-wrapper > p {
+  transition-duration: 300ms;
+}
+
+.main-footer-wrapper > a:hover {
+  color: var(--highlight);
+  transition-duration: 300ms;
+}
+
+.main-footer-wrapper > p:hover {
+  color: var(--highlight);
+  cursor: pointer;
   transition-duration: 300ms;
 }
 
@@ -144,6 +270,7 @@ h5 {
 }
 
 .side-container > a:hover {
+  color: var(--highlight);
   opacity: 100%;
   transition-duration: 300ms;
 }
