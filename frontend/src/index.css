@@ -11,3 +11,69 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* ====== APP VARIABLES ====== */
+
+:root {
+  --app-padding: 30px 60px;
+  /* === LIGHT MODE === */
+  --primary-line: #01092B;
+}
+
+h3 {
+  font-family: "magno-sans-variable", sans-serif;
+  font-size: 40px;
+  font-variation-settings: "wght" 400;
+  margin: 0;
+}
+
+h5 {
+  font-family: "magno-sans-variable", sans-serif;
+  font-size: 32px;
+  font-variation-settings: "wght" 400;
+  margin: 0;
+}
+
+/* ====== MENU ====== */
+
+.nav-wrapper {
+  box-sizing: border-box;
+  display: grid;
+  padding: var(--app-padding);
+  width: 100vW;
+}
+
+.main-nav-wrapper {
+  align-items: center;
+  column-gap: 30px;
+  display: flex;
+}
+
+.horizontal-line {
+  background-color: var(--primary-line);
+  height: 2px;
+  width: 75%;
+}
+
+.subnav-wrapper {
+  align-items: flex-end;
+  border-right: 1px solid var(--primary-line);
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  margin-top: 30px;
+  padding-right: 30px;
+  overflow: hidden;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.subnav-wrapper > a {
+  opacity: 50%;
+  transition-duration: 300ms;
+}
+
+.subnav-wrapper > a:hover {
+  opacity: 100%;
+  transition-duration: 300ms;
+}
