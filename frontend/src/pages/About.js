@@ -8,13 +8,10 @@ import useFetch from '../useFetch';
         const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/about-page`)
 
         let about = null;
-
-        console.log('about')
+        
         if (data) {
 
             about = data.data.attributes
-
-            console.log(about)
 
             return (
                 <div className="page-wrapper">
