@@ -61,7 +61,7 @@ import { BrowserRouter as Router,
                                 className="footer-input"
                                 required
                             />
-                            <button className="contact-bttn">Join</button>
+                            <button>Join</button>
                             </div>
                         </form>
                     </div>

@@ -37,6 +37,12 @@ p {
   font-size: 20px;
 }
 
+label {
+  font-family: "Neusa Next Std", sans-serif;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
 h2 {
   font-family: "magno-sans-variable", sans-serif;
   font-size: 44px;
@@ -58,6 +64,16 @@ h5 {
   margin: 0;
 }
 
+.flex {
+  display: flex;
+}
+
+.column-gap {
+  align-items: center;
+  column-gap: 30px;
+  justify-content: space-between;
+}
+
 /* ====== MENU ====== */
 
 .nav-wrapper {
@@ -77,7 +93,7 @@ h5 {
 .horizontal-line {
   background-color: var(--primary-line);
   height: 1px;
-  width: 60%;
+  width: 63%;
 }
 
 .subnav-wrapper {
@@ -138,8 +154,6 @@ h5 {
   cursor: pointer;
   transition-duration: 300ms;
 }
-
-
 
 .footer-form {
   display: flex;
@@ -244,7 +258,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   padding-bottom: 30px;
-  width: 60%;
+  width: 63%;
 }
 
 .side-container {
@@ -273,4 +287,68 @@ button:hover {
   color: var(--highlight);
   opacity: 100%;
   transition-duration: 300ms;
+}
+
+/* ====== CONTACT ====== */
+
+.contact-page {
+  justify-content: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 30px;
+  padding-top: 30px;
+  row-gap: 30px;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+  position: fixed;
+}
+
+.contact-input {
+  font-size: 20px;
+  width: 250px;
+}
+
+.radio-input {
+  margin-top: 0px;
+}
+
+textarea {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid var(--primary-line);
+  font-family: "Neusa Next Std", sans-serif;
+  font-size: 20px;
+  height: 200px;
+  transition-duration: 300ms;
+}
+
+textarea:focus {
+  font-family: "Neusa Next Std", sans-serif;
+  border-bottom: 1px solid #0000FE;
+  color: #0000FE;
+  outline: none;
+  transition-duration: 300ms;
+}
+
+input::placeholder {
+  color: var(--primary-line);
+}
+
+input::after {
+  color: #0000FE;
+}
+
+.contact-bttn {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.contact-bttn-container {
+  display: flex;
+  justify-content: flex-end;
 }
