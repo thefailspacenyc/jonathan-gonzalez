@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_project_components_texts",
+  "info": {
+    "displayName": "Text",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "blocks"
+    }
+  }
+}

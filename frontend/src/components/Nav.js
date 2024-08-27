@@ -7,6 +7,8 @@ import { BrowserRouter as Router,
 // === Pages
 import About from '../pages/About';
 import Contact from '../pages/Contact';
+import ProjectView from '../pages/ProjectView';
+import Landing from '../pages/Landing';
 
     function Navigation() {
         
@@ -61,8 +63,10 @@ import Contact from '../pages/Contact';
                     </div>
                 </div>
                 <Routes>
+                    <Route path="/landing" element={<Landing />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/projects/:id" element={<ProjectView />} />
                 </Routes>
             </Router>
         );
