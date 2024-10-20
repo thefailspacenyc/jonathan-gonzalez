@@ -41,6 +41,26 @@
     },
     "Title": {
       "type": "blocks"
+    },
+    "Cover_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tag": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tag.tag",
+      "inversedBy": "projects"
+    },
+    "Year": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,12 @@
+$n: 4;
+
+.project-list-bar {
+  opacity: 0;
+  animation: fade-in 300ms ease forwards;
+
+  @for $x from 2 through $n {
+    &:nth-child(#{$x}) {
+      animation-delay: 100ms * ($x - 1);
+    }
+  }
+}

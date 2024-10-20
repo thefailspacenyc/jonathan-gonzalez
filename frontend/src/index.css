@@ -369,7 +369,90 @@ input::after {
   justify-content: flex-end;
 }
 
-/* ====== CONTACT ====== */
+/* ====== PROJECT LIST ====== */
+.project-list-wrapper {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: var(--app-height);
+}
+
+.tag-handler-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.tag-handler {
+  display: flex;
+  justify-content: space-between;
+  width: 50vW;
+}
+
+.tag-handler > p {
+  transition-duration: 600ms;
+  border: 1px solid transparent;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.tag-handler > p:hover {
+  transition-duration: 600ms;
+  border: 1px solid var(--primary-line) ;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 20px;
+}
+
+.selected {
+  border: 1px solid var(--primary-line) !important;
+  border-radius: 5px;
+}
+
+.project-list-container {
+  background-color: var(--primary-line);
+  box-sizing: border-box;
+  padding-left: 140px;
+  padding-bottom: 20px;
+  width: 100vW;
+}
+
+.project-list-scroll {
+  display: flex;
+  column-gap: 20px;
+  overflow: scroll;
+  width: calc(100vw - 140px);
+  min-height: 400px;
+}
+
+@keyframes FadeIn { 
+  0% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
+  }
+}
+
+.project-list-scroll > a {
+  animation: FadeIn 1s ease 300ms forwards;
+  animation-delay: 500ms;
+  opacity: 0;
+}
+
+.project-list-thumbnail {
+  aspect-ratio: 1 / 1;
+  border-radius: 5px;
+  width: 320px;
+}
+
+.project-list-bar {
+  border-top: 2px solid var(--inv-highlight);
+  margin: 20px 0px;
+  opacity: 1 !important;
+}
+
+/* ====== PROJECT VIEW ====== */
 
 .project-view {
   margin-top: 20vH;

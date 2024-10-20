@@ -845,6 +845,13 @@ export interface ApiProjectProject extends Schema.CollectionType {
     Button: Attribute.Component<'site-widgets.button'>;
     Location: Attribute.String;
     Title: Attribute.Blocks;
+    Cover_Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    tag: Attribute.Relation<
+      'api::project.project',
+      'manyToOne',
+      'api::tag.tag'
+    >;
+    Year: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -859,6 +866,33 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTagTag extends Schema.CollectionType {
+  collectionName: 'tags';
+  info: {
+    singularName: 'tag';
+    pluralName: 'tags';
+    displayName: 'Tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Tag_Title: Attribute.String;
+    projects: Attribute.Relation<
+      'api::tag.tag',
+      'oneToMany',
+      'api::project.project'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -883,6 +917,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::project.project': ApiProjectProject;
+      'api::tag.tag': ApiTagTag;
     }
   }
 }
