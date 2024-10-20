@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_project_components_single_images",
+  "info": {
+    "displayName": "Single Image",
+    "icon": "expand"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Image_Description": {
+      "type": "blocks"
+    }
+  }
+}

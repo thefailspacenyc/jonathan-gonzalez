@@ -7,6 +7,9 @@ import { BrowserRouter as Router,
 // === Pages
 import About from '../pages/About';
 import Contact from '../pages/Contact';
+import ProjectView from '../pages/ProjectView';
+import Landing from '../pages/Landing';
+import ProjectList from '../pages/ProjectList';
 
     function Navigation() {
         
@@ -55,14 +58,17 @@ import Contact from '../pages/Contact';
                     </div>
                     <div className="subnav-wrapper" style={{height: navHeight}}>
                         <a href="/about"><h5>About</h5></a>
-                        <a><h5>Projects</h5></a>
+                        <a href="/projects"><h5>Projects</h5></a>
                         <a href="/contact"><h5>Contact</h5></a>
                         <a><h5>Donate</h5></a>
                     </div>
                 </div>
                 <Routes>
+                    <Route path="/landing" element={<Landing />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/projects/:id" element={<ProjectView />} />
+                    <Route path="/projects" element={<ProjectList />} />
                 </Routes>
             </Router>
         );

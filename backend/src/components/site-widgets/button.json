@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_site_widgets_buttons",
+  "info": {
+    "displayName": "Button",
+    "icon": "command"
+  },
+  "options": {},
+  "attributes": {
+    "Button_Link": {
+      "type": "string"
+    },
+    "Button_Text": {
+      "type": "blocks"
+    },
+    "Toggle": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_project_components_videos",
+  "info": {
+    "displayName": "Video",
+    "icon": "eye"
+  },
+  "options": {},
+  "attributes": {
+    "Video": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Description": {
+      "type": "blocks"
+    }
+  }
+}
