@@ -5,7 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(-45deg, var(--gradient-one), var(--gradient-two), var(--gradient-three), var(--gradient-four), var(--gradient-five));
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+	height: var(--app-height);
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -21,6 +38,11 @@ code {
   --primary-line: #01092B;
   --highlight: #0000FE;
   --inv-highlight: #B7DFF8;
+  --gradient-one: #58C1AE;
+  --gradient-two: #42519A;
+  --gradient-three: #B7DFF8;
+  --gradient-four: #C3D1DF;
+  --gradient-five: #A1BCEB;
 }
 
 @font-face {
@@ -309,6 +331,7 @@ button:hover {
 
 .contact-page {
   justify-content: center;
+  height: var(--app-height);
 }
 
 .contact-form {
@@ -324,6 +347,7 @@ button:hover {
 }
 
 .contact-input {
+  background-color: transparent;
   font-size: 20px;
   width: 250px;
 }
@@ -332,11 +356,17 @@ button:hover {
   margin-top: 0px;
 }
 
+input[type="radio" i] {
+  color: transparent;
+}
+
 textarea {
+  background-color: transparent;
   border-top: none;
   border-right: none;
   border-left: none;
   border-bottom: 1px solid var(--primary-line);
+  color: var(--primary-line);
   font-family: "Neusa Next Std", sans-serif;
   font-size: 20px;
   height: 200px;
@@ -351,6 +381,10 @@ textarea:focus {
   transition-duration: 300ms;
 }
 
+textarea::placeholder {
+  color: var(--primary-line);
+}
+
 input::placeholder {
   color: var(--primary-line);
 }
@@ -360,6 +394,7 @@ input::after {
 }
 
 .contact-bttn {
+  background-color: transparent;
   padding-left: 100px;
   padding-right: 100px;
 }
