@@ -8,8 +8,10 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
         return (
             <div className="single-image-wrapper">     
-                <img className="single-image" src={ `${process.env.REACT_APP_BACKEND}${ project.Image.data.attributes.url }`} />
-                <BlocksRenderer className="credit single-image-credit" content={ project.Image_Description } /> 
+                <img className="single-image" src={ `${ project.Image.data.attributes.url }`} />
+                { project.Image_Description ? (
+                    <BlocksRenderer className="credit single-image-credit" content={ project.Image_Description } /> 
+                ) : (null) }
             </div>
         );
     }

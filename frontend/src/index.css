@@ -9,7 +9,7 @@ body {
 	background-size: 400% 400%;
 	animation: gradient 30s ease infinite;
 	height: var(--app-height);
-}
+  overscroll-behavior: none;}
 
 @keyframes gradient {
 	0% {
@@ -292,7 +292,7 @@ button:hover {
 }
 
 .main-container > p {
-  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .main-container {
@@ -562,11 +562,13 @@ video {
 
 hr {
   border-top: 1px solid var(--primary-line);
+  border-bottom: none;
   margin: 0px;
+  margin-left: 138px;
 }
 
 .gallery-wrapper {
-  padding-left: 138px;
+  padding-left: 0px;
 }
 
 .gallery {
@@ -574,7 +576,19 @@ hr {
   column-gap: 60px;
   overflow: scroll;
   padding: 30px 30px 30px 0px;
-  width: calc(100vW - 168px)
+  width: calc(100vW - 30px);
+
+  /* SCROLLBAR */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.gallery > img:first-child {
+  margin-left: 138px;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
 }
 
 .gallery-image {
@@ -585,5 +599,20 @@ hr {
 
 .credits > p {
   font-size: 16px;
+  margin-bottom: 0px;
+  margin-top: 5px;
 }
 
+.credit-title {
+  font-family: "magno-sans-variable", sans-serif;
+  font-size: 28px;
+  font-variation-settings: "wght" 200;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+
+.min-height {
+  min-height: 100vH;
+}

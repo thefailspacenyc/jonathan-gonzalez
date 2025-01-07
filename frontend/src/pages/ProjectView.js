@@ -37,19 +37,28 @@ import Gallery from '../components/Gallery';
             }
 
             return (
-                <>
+                <div className="min-height">
                     <div className="page-wrapper">
                         <div className="main-container project-view">
                             <BlocksRenderer content={ project.Title } />
                             <h5> {project.Location} </h5>
+                        </div>
+                    </div>
+                    <div className="page-wrapper">
+                        <div className="main-container">
                             <BlocksRenderer content={ project.Description } />
                         </div>
-                        <div className="side-container project-view credits">
+                        <div className="side-container credits">
                             { project.Credits ? (
                                 <BlocksRenderer content={ project.Credits } 
-                                    // blocks={{
-                                    //     link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
-                                    // }}
+                                    blocks={{
+                                        heading: ({ children, level }) => {
+                                            switch (level) {
+                                              case 4:
+                                                return <h4 className="credit-title">{ children }</h4>
+                                            }
+                                        }
+                                    }}
                                 />
                             ) : ( null) }
                         </div>
@@ -61,7 +70,7 @@ import Gallery from '../components/Gallery';
                             </div>
                         )}
                     </div>
-                </>
+                </div>
             );
         }
        
