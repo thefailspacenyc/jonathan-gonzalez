@@ -22,8 +22,11 @@ import { useParams } from 'react-router-dom';
                             {projects.map((project) => 
                                 <a href={`/projects/${project.attributes.slug}`}>
                                     <div className="project-preview">
-                                        <img className="project-list-thumbnail" src={`${process.env.REACT_APP_BACKEND}${project.attributes.Cover_Image.data.attributes.url}`} />
-                                        <BlocksRenderer content={ project.attributes.Title } />
+                                        <img className="project-list-thumbnail" src={`${project.attributes.Cover_Image.data.attributes.url}`} />
+                                        <div className="project-thumbnail-info">
+                                            <BlocksRenderer content={ project.attributes.Title } />
+                                            <h3>{ project.attributes.Year }</h3>
+                                        </div>
                                     </div>
                                 </a>
                             )}

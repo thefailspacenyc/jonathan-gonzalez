@@ -41,13 +41,17 @@ import Gallery from '../components/Gallery';
                     <div className="page-wrapper">
                         <div className="main-container project-view">
                             <BlocksRenderer content={ project.Title } />
+                            <h5> {project.Location} </h5>
                             <BlocksRenderer content={ project.Description } />
                         </div>
                         <div className="side-container project-view credits">
-                            <h1></h1>
-                        { project.Credits ? (
-                            <BlocksRenderer content={ project.Credits } />
-                        ) : ( null) }
+                            { project.Credits ? (
+                                <BlocksRenderer content={ project.Credits } 
+                                    // blocks={{
+                                    //     link: ({ children, url }) => <Link to={url} target="blank">{children}</Link>,
+                                    // }}
+                                />
+                            ) : ( null) }
                         </div>
                     </div>
                     <div>
