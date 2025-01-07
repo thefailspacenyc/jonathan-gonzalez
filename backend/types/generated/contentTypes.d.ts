@@ -794,13 +794,14 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
     singularName: 'about-page';
     pluralName: 'about-pages';
     displayName: 'About_Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Biography: Attribute.Blocks;
-    CV: Attribute.String;
+    CV_Link: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -812,6 +813,36 @@ export interface ApiAboutPageAboutPage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::about-page.about-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Instagram_Link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
       'oneToOne',
       'admin::user'
     > &
@@ -916,6 +947,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
+      'api::footer.footer': ApiFooterFooter;
       'api::project.project': ApiProjectProject;
       'api::tag.tag': ApiTagTag;
     }
