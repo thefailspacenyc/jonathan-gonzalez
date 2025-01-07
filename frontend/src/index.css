@@ -112,6 +112,10 @@ h6 {
   justify-content: space-between;
 }
 
+.pointer:hover {
+  cursor: pointer;
+}
+
 /* ====== MENU ====== */
 
 .nav-wrapper {
@@ -306,6 +310,12 @@ button:hover {
   width: 30%;
 }
 
+/* ====== LANDING PAGE ====== */
+
+.landing-page {
+  min-height: 90vH;
+}
+
 /* ====== ABOUT ====== */
 
 .about-page {
@@ -473,12 +483,32 @@ input::after {
   animation: FadeIn 1s ease 300ms forwards;
   animation-delay: 500ms;
   opacity: 0;
+  text-decoration: none;
 }
 
 .project-list-thumbnail {
   aspect-ratio: 1 / 1;
   border-radius: 5px;
+  object-fit: cover;
   width: 320px;
+}
+
+.project-thumbnail-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.project-thumbnail-info > h1 {
+  color: var(--inv-highlight);
+  font-size: 36px;
+}
+
+.project-thumbnail-info > h3 {
+  color: var(--inv-highlight);
+  font-family: "space-mono", mono;
+  font-size: 16px;
 }
 
 .project-list-bar {
@@ -556,3 +586,4 @@ hr {
 .credits > p {
   font-size: 16px;
 }
+

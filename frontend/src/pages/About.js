@@ -19,7 +19,7 @@ import useFetch from '../useFetch';
                         <BlocksRenderer content={ about.Biography } />
                     </div>
                     <div className="side-container about-page">
-                        <a href={ about.CV }><h2>CV</h2></a>
+                        <a className="pointer" target="_blank" href={ about.CV }><h2>CV</h2></a>
                     </div>
                 </div>
             );

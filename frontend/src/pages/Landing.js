@@ -7,7 +7,7 @@ import useFetch from '../useFetch';
 
         return (
             <div className="page-wrapper">
-                    <div className="main-container about-page">
+                    <div className="main-container about-page landing-page">
                     </div>
                     <div className="side-container about-page">
                     </div>
