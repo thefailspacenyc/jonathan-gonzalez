@@ -7,7 +7,7 @@
                 <hr></hr>
                 <div className="gallery">
                     {section.Gallery.data.map((image) => 
-                        <img className="gallery-image" src={ `${process.env.REACT_APP_BACKEND}${ image.attributes.url }` } />
+                        <img className="gallery-image" src={ `${ image.attributes.url }` } />
                     )}
                 </div>
             </div>
