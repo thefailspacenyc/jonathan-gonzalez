@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-page",
     "pluralName": "about-pages",
-    "displayName": "About_Page"
+    "displayName": "About_Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +15,7 @@
     "Biography": {
       "type": "blocks"
     },
-    "CV": {
+    "CV_Link": {
       "type": "string"
     }
   }
