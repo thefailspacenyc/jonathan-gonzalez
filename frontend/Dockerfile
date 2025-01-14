@@ -5,6 +5,9 @@ FROM node:18-alpine as build
 ARG NODE_ENV
 ENV NODE_ENV=${NODE_ENV}
 
+# Print the value of NODE_ENV
+RUN echo "NODE_ENV: ${NODE_ENV}"
+
 WORKDIR /app
 COPY package*.json ./
 RUN yarn install

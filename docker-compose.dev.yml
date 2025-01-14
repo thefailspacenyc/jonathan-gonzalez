@@ -37,18 +37,10 @@ services:
       - ./backend/yarn.lock:/opt/yarn.lock
       - ./backend/config:/opt/app/config
       - ./backend/public:/opt/app/public
-      # - ./backend/.env:/opt/app/.env
     ports:
       - "1337:1337"
     depends_on:
       - strapi-db
-    # labels:
-    #   - "traefik.enable=true"
-    #   - "traefik.http.routers.strapi.rule=Host(`strapi.zoedonnellycolt.space`)"
-    #   - "traefik.http.routers.strapi.entrypoints=websecure"
-    #   - "traefik.http.routers.strapi.tls=true"
-    #   - "traefik.http.routers.strapi.tls.certresolver=myresolver"
-    #   - "traefik.http.services.strapi.loadbalancer.server.port=1337"
 
   strapi-db:
     restart: unless-stopped
@@ -58,8 +50,7 @@ services:
       POSTGRES_PASSWORD: ${STRAPI_DATABASE_PASSWORD}
       POSTGRES_DB: ${STRAPI_DATABASE_NAME}
     volumes:
-      - strapi-data:/var/lib/postgresql/data/ #using a volume
-      # - ./docker/storage/postgres/data:/var/lib/postgresql/data/ # if you want to use a bind folder
+      - strapi-data:/var/lib/postgresql/data/
     ports:
       - "5432:5432"
 
