@@ -1,0 +1,67 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: development
+    image: my-frontend:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - strapi
+
+  strapi:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: my-strapi:latest
+    restart: unless-stopped
+    environment:
+      ADMIN_JWT_SECRET: ${STRAPI_ADMIN_JWT_SECRET}
+      API_TOKEN_SALT: ${STRAPI_API_TOKEN_SALT}
+      APP_KEYS: ${STRAPI_APP_KEYS}
+      DATABASE_CLIENT: ${STRAPI_DATABASE_CLIENT}
+      DATABASE_HOST: strapi-db
+      DATABASE_PORT: ${STRAPI_DATABASE_PORT}
+      DATABASE_NAME: ${STRAPI_DATABASE_NAME}
+      DATABASE_USERNAME: ${STRAPI_DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${STRAPI_DATABASE_PASSWORD}
+      JWT_SECRET: ${STRAPI_JWT_SECRET}
+      NODE_ENV: ${NODE_ENV}
+      TRANSFER_TOKEN_SALT: ${STRAPI_TRANSFER_TOKEN_SALT}
+    volumes:
+      - ./backend/src:/opt/app/src
+      - ./backend/package.json:/opt/package.json
+      - ./backend/yarn.lock:/opt/yarn.lock
+      - ./backend/config:/opt/app/config
+      - ./backend/public:/opt/app/public
+      # - ./backend/.env:/opt/app/.env
+    ports:
+      - "1337:1337"
+    depends_on:
+      - strapi-db
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.strapi.rule=Host(`strapi.zoedonnellycolt.space`)"
+    #   - "traefik.http.routers.strapi.entrypoints=websecure"
+    #   - "traefik.http.routers.strapi.tls=true"
+    #   - "traefik.http.routers.strapi.tls.certresolver=myresolver"
+    #   - "traefik.http.services.strapi.loadbalancer.server.port=1337"
+
+  strapi-db:
+    restart: unless-stopped
+    image: postgres:14 # https://docs.strapi.io/dev-docs/installation/cli#preparing-the-installation
+    environment:
+      POSTGRES_USER: ${STRAPI_DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${STRAPI_DATABASE_PASSWORD}
+      POSTGRES_DB: ${STRAPI_DATABASE_NAME}
+    volumes:
+      - strapi-data:/var/lib/postgresql/data/ #using a volume
+      # - ./docker/storage/postgres/data:/var/lib/postgresql/data/ # if you want to use a bind folder
+    ports:
+      - "5432:5432"
+
+volumes:
+  strapi-data:
