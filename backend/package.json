@@ -12,12 +12,9 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@cloudinary/react": "^1.13.0",
-    "@cloudinary/url-gen": "^1.21.0",
     "@strapi/plugin-cloud": "4.25.8",
     "@strapi/plugin-i18n": "4.25.8",
     "@strapi/plugin-users-permissions": "4.25.8",
-    "@strapi/provider-upload-cloudinary": "^5.2.0",
     "@strapi/strapi": "4.25.8",
     "better-sqlite3": "8.6.0",
     "pg": "^8.13.1",
