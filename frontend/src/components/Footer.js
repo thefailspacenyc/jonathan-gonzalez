@@ -11,6 +11,7 @@ import useFetch from '../useFetch';
         
         const { isLoading, error, data } = useFetch(`${process.env.REACT_APP_BACKEND}/api/footer`)
 
+        const postURL = `https://gonzalezinfo.us6.list-manage.com/subscribe/post?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_I}`
         let link = [];
 
         const [open, setOpen] = useState(false)
