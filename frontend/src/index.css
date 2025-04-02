@@ -43,6 +43,21 @@ code {
   --gradient-three: #B7DFF8;
   --gradient-four: #C3D1DF;
   --gradient-five: #A1BCEB;
+  --text-color: #01092B;
+  --background-color: white;
+}
+
+[data-theme="dark"] {
+  --primary-line: #B7DFF8;
+  --highlight: #0000FE;
+  --inv-highlight: #01092B;
+  --gradient-one: #1a1a1a;
+  --gradient-two: #2d2d2d;
+  --gradient-three: #3d3d3d;
+  --gradient-four: #4d4d4d;
+  --gradient-five: #5d5d5d;
+  --text-color: #B7DFF8;
+  --background-color: #01092B;
 }
 
 @font-face {
@@ -130,6 +145,7 @@ h6 {
   align-items: center;
   column-gap: 30px;
   display: flex;
+  justify-content: space-between;
 }
 
 .horizontal-line {
@@ -615,4 +631,36 @@ hr {
 
 .min-height {
   min-height: 100vH;
+}
+
+/* ====== THEME TOGGLE ====== */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--primary-line);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  margin-left: auto;
+}
+
+.theme-toggle:hover {
+  background-color: var(--highlight);
+  border-color: var(--highlight);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--primary-line);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover svg {
+  fill: white;
 }

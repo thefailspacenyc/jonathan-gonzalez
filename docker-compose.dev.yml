@@ -5,6 +5,7 @@ services:
       dockerfile: Dockerfile
       args:
         NODE_ENV: development
+        REACT_APP_BACKEND: ${REACT_APP_BACKEND}
     image: my-frontend:latest
     restart: unless-stopped
     ports:
